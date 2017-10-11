@@ -116,7 +116,7 @@ ORDER BY percent;
 
 This view uses the previous two views to calculate the number of errors for each date as a percentage of the total requests.
 
-[^1]`CREATE OR REPLACE VIEW` is used instead of `CREATE VIEW` because multiple views with the same names were created.
+[^1]:`CREATE OR REPLACE VIEW` is used instead of `CREATE VIEW` because multiple views with the same names were created.
 
 ## Running the Python program
 
