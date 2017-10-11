@@ -32,7 +32,8 @@ SELECT articles.title, COUNT(log.id) AS views
 FROM articles, log
 WHERE log.path = Concat('/article/', articles.slug)
 GROUP BY articles.title
-ORDER BY views DESC LIMIT 3;```
+ORDER BY views DESC LIMIT 3;
+```
 
 This view joins the articles and the log table in order to provide a table with the title of articles alongside the total number of views, calculated by counting the id column in the log table. The table selects only the first three rows.
 
@@ -44,7 +45,8 @@ This view joins the articles and the log table in order to provide a table with 
 CREATE OR REPLACE VIEW articleAuthorName AS
 SELECT authors.name, articles.title, articles.slug
 FROM authors, articles
-WHERE authors.id = articles.author;```
+WHERE authors.id = articles.author;
+```
 
 This view joins the authors and articles tables to provide a table with a written name for the authors instead of an integer ID alongside the article’s title and slug. This view will be referenced later to answer Question 2.
 
@@ -56,7 +58,8 @@ SELECT articles.title, COUNT(log.id) AS views
 FROM articles, log 
 WHERE log.path = CONCAT('/article/', articles.slug) 
 GROUP BY articles.title 
-ORDER BY views DESC;```
+ORDER BY views DESC;
+```
 
 This view creates a table with the title of the article and the number of views it received. This view will be referenced later to answer Question 2.
 
@@ -68,7 +71,8 @@ SELECT articleAuthorName.name, slugViews.Views
 FROM articleAuthorName, slugViews
 WHERE articleAuthorName.title = slugViews.title
 GROUP BY articleAuthorName.name, slugViews.Views
-ORDER BY views DESC;```
+ORDER BY views DESC;
+```
 
 This view reference both the previous two views in order to provide a table with the author’s names and the number of views associated with their name for each article they authored. An SQL query that sum up the views column of this table for each author will result in the total views for each author all time. 
 
@@ -82,7 +86,8 @@ SELECT date(time) AS date, count(*) AS requests
 FROM log
 WHERE status != '200 OK'
 GROUP BY date
-ORDER BY date;```
+ORDER BY date;
+```
 
 This view presents the number of errors for each date.
 
@@ -93,7 +98,8 @@ CREATE OR REPLACE VIEW allRequests AS
 SELECT date(time) AS date, count(*) AS requests
 FROM log
 GROUP BY date
-ORDER BY date;```
+ORDER BY date;
+```
 
 This view presents the total number of requests for each date, including errors.
 
@@ -105,7 +111,8 @@ SELECT errorRequests.date, round(((errorRequests.requests*100.0)/allRequests.req
 FROM errorRequests, allRequests
 WHERE errorRequests.date = allRequests.date
 GROUP BY errorRequests.date, percent
-ORDER BY percent;```
+ORDER BY percent;
+```
 
 This view uses the previous two views to calculate the number of errors for each date as a percentage of the total requests.
 
