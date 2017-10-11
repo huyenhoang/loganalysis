@@ -16,11 +16,60 @@ Objectives: Given three tables with author, articles, and request informations, 
 Make sure to have the following installed:
 1. Vagrant
 2. VirtualBox
-3. Python 2.7.9 (at least)
+3. Python 2.7.0 (at least)
 
-## Installing
+## Installations
+
+### Vagrant
+
+### VirtualBox
+[Can be downloaded here] (https://www.virtualbox.org/wiki/Downloads "Virtual Box")
+
+### Python
+#### On Mac
+To determine if you have Python 2.7, open the Terminal application, type the following, and press Return:
+
+`python -V`
+
+This command will report the version of Python:
+
+`Python 2.7.9`
+
+Any version between 2.7.0 and 2.7.10 is fine.
+
+#### On Windows 7
+
+To get to the command line, open the Windows menu and type “command” in the search bar. Select Command Prompt from the search results.
+
+In the Command Prompt window, type the following and press Enter.
+
+`python`
+
+If Python is installed and in your path, then this command will run python.exe and show you the version number.
+
+`Python 2.7.9 (default, Dec 10 2014, 12:24:55) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.`
+
+Otherwise, you will see:
+
+`'python' is not recognized as an internal or external command, operable program or batch file.`
+
+#### On Linux
+
+Open a shell and type
+
+`which python`
+
+If Python is installed, you will get back its location, which may or may not include the version number. If the location does not include a version number, then ask for it:
+
+`python -V`
+
+This command returns the version
+
+`Python 2.7.9`
 
 ## Creating Views with PostgreSQL
+Note that PostgreSQL comes with the Vagrant machine you installed.
 
 ### View(s) Created for Question 1: 
 
@@ -37,7 +86,7 @@ ORDER BY views DESC LIMIT 3;
 
 This view joins the articles and the log table in order to provide a table with the title of articles alongside the total number of views, calculated by counting the id column in the log table. The table selects only the first three rows.
 
-### View(s) Created for Question 2[^1]: 
+### View(s) Created for Question 2*: 
 
 #### View 1 name: `articleAuthorName`
 
@@ -76,7 +125,7 @@ ORDER BY views DESC;
 
 This view reference both the previous two views in order to provide a table with the author’s names and the number of views associated with their name for each article they authored. An SQL query that sum up the views column of this table for each author will result in the total views for each author all time. 
 
-### View(s) Created for Question 3[^1]:
+### View(s) Created for Question 3*:
 
 #### View 1 name: `errorRequests`
 
@@ -116,7 +165,7 @@ ORDER BY percent;
 
 This view uses the previous two views to calculate the number of errors for each date as a percentage of the total requests.
 
-[^1]:`CREATE OR REPLACE VIEW` is used instead of `CREATE VIEW` because multiple views with the same names were created.
+*`CREATE OR REPLACE VIEW` is used instead of `CREATE VIEW` because multiple views with the same names were created.
 
 ## Running the Python program
 
