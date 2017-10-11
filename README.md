@@ -4,6 +4,11 @@ This project is part of Udacity's Full Stack Nanodegree Program.
 
 The purpose is to use Python and PostgreSQL to build an internal tool to query databases and provide answers to questions about authors, articles, and links of a news website.
 
+Objectives: Given three tables with author, articles, and request informations, provide answers to the following 3 questions using one (1) query to the databases:
+1. What are the most popular three articles of all time?
+2. Who are the most popular article authors of all time?
+3. On which days did more than 1% of requests lead to errors?
+
 # Getting Started
 
 ## Prerequisites
