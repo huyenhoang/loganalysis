@@ -37,7 +37,7 @@ ORDER BY views DESC LIMIT 3;
 
 This view joins the articles and the log table in order to provide a table with the title of articles alongside the total number of views, calculated by counting the id column in the log table. The table selects only the first three rows.
 
-### View(s) Created for Question 2*: 
+### View(s) Created for Question 2[^1]: 
 
 #### View 1 name: `articleAuthorName`
 
@@ -76,7 +76,7 @@ ORDER BY views DESC;
 
 This view reference both the previous two views in order to provide a table with the author’s names and the number of views associated with their name for each article they authored. An SQL query that sum up the views column of this table for each author will result in the total views for each author all time. 
 
-### View(s) Created for Question 3*:
+### View(s) Created for Question 3[^1]:
 
 #### View 1 name: `errorRequests`
 
@@ -116,7 +116,7 @@ ORDER BY percent;
 
 This view uses the previous two views to calculate the number of errors for each date as a percentage of the total requests.
 
-*`CREATE OR REPLACE VIEW` is used instead of `CREATE VIEW` because multiple views with the same names were created.
+[^1]`CREATE OR REPLACE VIEW` is used instead of `CREATE VIEW` because multiple views with the same names were created.
 
 ## Running the Python program
 
