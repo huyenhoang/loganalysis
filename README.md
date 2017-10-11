@@ -14,18 +14,14 @@ Objectives: Given three tables with author, articles, and request informations, 
 ## Prerequisites
 
 Make sure to have the following installed:
-1. Vagrant
+1. Python 2.7.0 (at least)
 2. VirtualBox
-3. Python 2.7.0 (at least)
+3. Vagrant
 
 ## Installations
 
-### Vagrant
-
-### VirtualBox
-[Can be downloaded here] (https://www.virtualbox.org/wiki/Downloads "Virtual Box")
-
 ### Python
+
 #### On Mac
 To determine if you have Python 2.7, open the Terminal application, type the following, and press Return:
 
@@ -66,8 +62,35 @@ This command returns the version
 
 `Python 2.7.9`
 
+### VirtualBox
+Can be downloaded here: (https://www.virtualbox.org/wiki/Downloads)
+
+### Vagrant
+
+Change directory to where the vagrantfile is.
+
+`vagrant up`
+
+Log into the virtual machine:
+`vagrant ssh`
+
+`cd /vagrant'
+
+
+## Getting the Data
+The SQL data files is provided in this repository. The file is called newsdata.sql. Put this file into the vagrant directory, which is shared with your virtual machine.
+
+Note that PostgreSQL comes with the Vagrant machine you installed. To load the data, `cd` into the `vagrant` directory and use the command `psql -d news -f newsdata.sql`.
+
+Here's what this command does:
+
+`psql` — the PostgreSQL command line program
+`-d news` — connect to the database named news which has been set up for you
+`-f newsdata.sql` — run the SQL statements in the file newsdata.sql
+
 ## Creating Views with PostgreSQL
-Note that PostgreSQL comes with the Vagrant machine you installed.
+
+To access the data and create the views necessary to solve these objectives, use `psql news`.
 
 ### View(s) Created for Question 1: 
 
