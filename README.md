@@ -39,9 +39,7 @@ Any version between 2.7.0 and 2.7.10 is fine.
 
 #### On Windows 7
 
-To get to the command line, open the Windows menu and type “command” in the search bar. Select Command Prompt from the search results.
-
-In the Command Prompt window, type the following and press Enter.
+To get to the command line, open the Windows menu and type “command” in the search bar. Select Command Prompt from the search results. In the Command Prompt window, type the following and press Enter.
 
 `python`
 
