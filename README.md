@@ -66,6 +66,7 @@ This command returns the version
 Can be downloaded here: (https://www.virtualbox.org/wiki/Downloads)
 
 ### Vagrant
+Download Vagrant hre: https://www.vagrantup.com/downloads.html
 
 Change directory to where the vagrantfile is.
 
@@ -76,7 +77,6 @@ Log into the virtual machine:
 
 `cd /vagrant'
 
-
 ## Getting the Data
 The SQL data files is provided in this repository. The file is called newsdata.sql. Put this file into the vagrant directory, which is shared with your virtual machine.
 
@@ -84,9 +84,9 @@ Note that PostgreSQL comes with the Vagrant machine you installed. To load the d
 
 Here's what this command does:
 
-`psql` — the PostgreSQL command line program
-`-d news` — connect to the database named news which has been set up for you
-`-f newsdata.sql` — run the SQL statements in the file newsdata.sql
+⋅⋅* `psql` — the PostgreSQL command line program
+⋅⋅* `-d news` — connect to the database named news which has been set up for you
+⋅⋅* `-f newsdata.sql` — run the SQL statements in the file newsdata.sql
 
 ## Creating Views with PostgreSQL
 
