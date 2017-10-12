@@ -25,7 +25,7 @@ def answerQuestions():
     results = cursor.fetchall()
     print("The most popular authors of all time are:")
     for (name, views) in results:
-	    print("{} --- {} total views".format(name, views))
+        print("{} --- {} total views".format(name, views))
     print("")
 # to answer "On which days did more than  1% of requests leads to errors?"
     queryDayError = """
@@ -44,3 +44,4 @@ def answerQuestions():
 
 if __name__ == "__main__":
     answerQuestions()
+
