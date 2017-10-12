@@ -84,9 +84,9 @@ Note that PostgreSQL comes with the Vagrant machine you installed. To load the d
 
 Here's what this command does:
 
-⋅⋅* `psql` — the PostgreSQL command line program
-⋅⋅* `-d news` — connect to the database named news which has been set up for you
-⋅⋅* `-f newsdata.sql` — run the SQL statements in the file newsdata.sql
+* `psql` — the PostgreSQL command line program
+* `-d news` — connect to the database named news which has been set up already
+* `-f newsdata.sql` — run the SQL statements in the file newsdata.sql
 
 ## Creating Views with PostgreSQL
 
@@ -190,6 +190,8 @@ This view uses the previous two views to calculate the number of errors for each
 
 ## Running the Python program
 
+From the command line, type `python log-analysis.py` to run the module. 
 
+The `answerQuestions` method in the python module and print out the results, which are recorded in the text file `printedResults.txt`
 
 
