@@ -68,17 +68,22 @@ Can be downloaded here: (https://www.virtualbox.org/wiki/Downloads)
 ### Vagrant
 Download Vagrant hre: https://www.vagrantup.com/downloads.html
 
-Change directory to where the vagrantfile is.
+To check if you've successfully installed, vagrant, type:
+`vagrant --version`
+
+The vagrant configuration file, named vagrantfile, can be forked from this Udacity respository: https://github.com/udacity/fullstack-nanodegree-vm
+
+To launch the virtual VM, change directory to where the vagrantfile is and use the following command:
 
 `vagrant up`
 
-Log into the virtual machine:
+To log into the virtual machine:
 `vagrant ssh`
 
-`cd /vagrant'
+Before loading the data, `cd` into the `vagrant` directory.
 
-## Getting the Data
-The SQL data files is provided in this repository. The file is called newsdata.sql. Put this file into the vagrant directory, which is shared with your virtual machine.
+## The Data
+The SQL data file is not provided with this repository (too big). But let's pretend it is. The file is called newsdata.sql. Put this file into the vagrant directory, which is shared with your virtual machine.
 
 Note that PostgreSQL comes with the Vagrant machine you installed. To load the data, `cd` into the `vagrant` directory and use the command `psql -d news -f newsdata.sql`.
 
@@ -90,7 +95,7 @@ Here's what this command does:
 
 ## Creating Views with PostgreSQL
 
-To access the data and create the views necessary to solve these objectives, use `psql news`.
+To access the data and create the views necessary to solve the 3 objectives, use `psql news`.
 
 ### View(s) Created for Question 1: 
 
