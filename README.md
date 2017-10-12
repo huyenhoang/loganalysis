@@ -9,6 +9,12 @@ Objectives: Given three tables with author, articles, and request informations, 
 2. Who are the most popular article authors of all time?
 3. On which days did more than 1% of requests lead to errors?
 
+# TL;DR
+
+1. Skip to the "Creating Views with PostgreSQL" section to see the views created to solve the three questions.
+2. Run Python module `python log-analysis.py` to query the database using these views.
+3. Output from queries are found in `printedResults.txt`
+
 # Getting Started
 
 ## Prerequisites
