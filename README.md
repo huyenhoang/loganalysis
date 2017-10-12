@@ -20,7 +20,7 @@ Make sure to have the following installed:
 
 ## Installations
 
-### Python
+### 1. Python
 
 #### On Mac
 To determine if you have Python 2.7, open the Terminal application, type the following, and press Return:
@@ -62,10 +62,10 @@ This command returns the version
 
 `Python 2.7.9`
 
-### VirtualBox
+### 2. VirtualBox
 Can be downloaded here: (https://www.virtualbox.org/wiki/Downloads)
 
-### Vagrant
+### 3. Vagrant
 Download Vagrant hre: https://www.vagrantup.com/downloads.html
 
 To check if you've successfully installed, vagrant, type:
