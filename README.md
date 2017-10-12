@@ -66,7 +66,7 @@ This command returns the version
 Can be downloaded here: (https://www.virtualbox.org/wiki/Downloads)
 
 ### 3. Vagrant
-Download Vagrant hre: https://www.vagrantup.com/downloads.html
+Download Vagrant here: https://www.vagrantup.com/downloads.html
 
 To check if you've successfully installed, vagrant, type:
 `vagrant --version`
