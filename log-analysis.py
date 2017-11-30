@@ -1,11 +1,19 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 import psycopg2
 
 
-def answerQuestions():
-    db = psycopg2.connect("dbname=news")
-    cursor = db.cursor()
+def connect(dbname="news"):
+    """Connect to the PostgreSQL database and returns a database connection."""
+    try:
+        db = psycopg2.connect("dbname={}".format(dbname))
+        cursor = db.cursor()
+        return db, cursor
+    except:
+        print("Error in connecting to database")
+
+def questionOne():
+    db, cursor = connect()
 # to answer "What are the most popular three articles of all time?"
     queryTopArticles = """
         SELECT * FROM articleViewCount;"""
@@ -15,6 +23,10 @@ def answerQuestions():
     for (title, views) in results:
         print("{} --- {} total views".format(title, views))
     print("")
+    db.close()
+
+def questionTwo():
+    db, cursor = connect()
 # to answer "Who are the most popular articles authors of all time?"
     queryTopAuthors = """
         SELECT name, sum(views) AS views
@@ -25,8 +37,12 @@ def answerQuestions():
     results = cursor.fetchall()
     print("The most popular authors of all time are:")
     for (name, views) in results:
-	    print("{} --- {} total views".format(name, views))
+        print("{} --- {} total views".format(name, views))
     print("")
+    db.close()
+
+def questionThree():
+    db, cursor = connect()
 # to answer "On which days did more than  1% of requests leads to errors?"
     queryDayError = """
         SELECT date, percent
@@ -43,4 +59,6 @@ def answerQuestions():
     db.close()
 
 if __name__ == "__main__":
-    answerQuestions()
+    questionOne()
+    questionTwo()
+    questionThree()
