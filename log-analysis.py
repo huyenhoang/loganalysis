@@ -10,7 +10,8 @@ def connect(dbname="news"):
         cursor = db.cursor()
         return db, cursor
     except:
-        print("Error in connecting to database")
+        print("There was a problem connecting to the database")
+        sys.exit(1)
 
 def questionOne():
     db, cursor = connect()
