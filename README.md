@@ -1,6 +1,6 @@
 # Log Analysis Project
 
-This project is part of Udacity's Full Stack Nanodegree Program. 
+This project is part of Udacity's Full Stack Nanodegree Program.
 
 The purpose is to use Python and PostgreSQL to build an internal tool to query databases and provide answers to questions about authors, articles, and links of a news website.
 
@@ -103,12 +103,12 @@ Here's what this command does:
 
 To access the data and create the views necessary to solve the 3 objectives, use `psql news`.
 
-### View(s) Created for Question 1: 
+### View(s) Created for Question 1:
 
 #### View name: `articleViewCount`
 
 ```
-CREATE VIEW articleViewCount AS 
+CREATE VIEW articleViewCount AS
 SELECT articles.title, COUNT(log.id) AS views
 FROM articles, log
 WHERE log.path = Concat('/article/', articles.slug)
@@ -118,7 +118,7 @@ ORDER BY views DESC LIMIT 3;
 
 This view joins the articles and the log table in order to provide a table with the title of articles alongside the total number of views, calculated by counting the id column in the log table. The table selects only the first three rows.
 
-### View(s) Created for Question 2*: 
+### View(s) Created for Question 2*:
 
 #### View 1 name: `articleAuthorName`
 
@@ -134,11 +134,11 @@ This view joins the authors and articles tables to provide a table with a writte
 #### View 2 name: `slugViews`
 
 ```
-CREATE VIEW slugViews AS 
-SELECT articles.title, COUNT(log.id) AS views 
-FROM articles, log 
-WHERE log.path = CONCAT('/article/', articles.slug) 
-GROUP BY articles.title 
+CREATE VIEW slugViews AS
+SELECT articles.title, COUNT(log.id) AS views
+FROM articles, log
+WHERE log.path = CONCAT('/article/', articles.slug)
+GROUP BY articles.title
 ORDER BY views DESC;
 ```
 
@@ -155,7 +155,7 @@ GROUP BY articleAuthorName.name, slugViews.Views
 ORDER BY views DESC;
 ```
 
-This view reference both the previous two views in order to provide a table with the author’s names and the number of views associated with their name for each article they authored. An SQL query that sum up the views column of this table for each author will result in the total views for each author all time. 
+This view reference both the previous two views in order to provide a table with the author’s names and the number of views associated with their name for each article they authored. An SQL query that sum up the views column of this table for each author will result in the total views for each author all time.
 
 ### View(s) Created for Question 3*:
 
@@ -201,8 +201,6 @@ This view uses the previous two views to calculate the number of errors for each
 
 ## Running the Python program
 
-From the command line, type `python log-analysis.py` to run the module. 
+From the command line, type `python log-analysis.py` to run the module.
 
-The `answerQuestions` method in the python module and print out the results, which are recorded in the text file `printedResults.txt`
-
-
+The three methods (questionOne, questionTwo, questionThree) in the python module will query the database using the views and print out the results, which are recorded in the text file `printedResults.txt`
