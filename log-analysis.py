@@ -59,6 +59,12 @@ def questionThree():
     db.close()
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     questionOne()
     questionTwo()
     questionThree()
+=======
+    answerQuestions()
+
+ 
+>>>>>>> ee0d83481f7c6b625b7d533d90160a8f1ba0165e
