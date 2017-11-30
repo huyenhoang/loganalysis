@@ -203,4 +203,4 @@ This view uses the previous two views to calculate the number of errors for each
 
 From the command line, type `python log-analysis.py` to run the module.
 
-The three methods (questionOne, questionTwo, questionThree) in the python module will query the database using the views and print out the results, which are recorded in the text file `printedResults.txt`
+The three methods (`questionOne`, `questionTwo`, `questionThree`) in the python module will query the database using the views and print out the results, which are recorded in the text file `printedResults.txt`
